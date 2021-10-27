@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+*, 
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+a,
+a:link,
+a:visited {
+    text-decoration: none; /*altı çizili olmaması için*/
+    outline: none;  /*linkin etrafındaki çizgileri kaldırdık*/
+    border: none;
+}
+
+ul,
+li {
+    list-style: none;  /*liste görünümünü kaldırdık*/
+    margin: 0;
+    padding: 0;
+}
+section,
+span,
+p {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    background-image: url(img/coffee.jpg); 
+    background-position: center; /*backgroundu ortalamak için*/
+    background-size: cover;  /*bütün alanı kaplaması için*/
+    background-attachment: fixed;  /*sabit kalması için*/
+    height: 100vh;  /*tüm ekran boyutunu kaplaması için */ 
+}
+
+.header-navbar {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /*ayırmak için */
+}
+
+.header-logo {
+    font-size: 16px;
+    letter-spacing: 2px;
+    border-bottom: 5px solid #000;
+    border-top: 5px solid #000;
+    border-radius: 35px;
+    padding: 5px;
+}
+
+ul {
+    display: flex; /*yan yana gelmelerini sağladık*/
+}
+
+li {
+    margin-left: 40px;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;  /*dikeyde hizalıyor*/
+    justify-content: center;  /*yatayda hizalıyor */
+    flex-direction: column; /*satırda değil sütunda hizalanması için yön gösteriyoruz */
+}
+
+h1 {
+    font-size: 8.5rem;
+    font-weight: 100;
+    line-height: 0.4;
+    letter-spacing: 2px;
+    font-family: 'Herr Von Muellerhoff', cursive;
+}
+
+.first-letter {
+    font-size: 10.3;
+    font-family: 'Herr Von Muellerhoff', cursive;;
+}
+
+.btn-coffee {
+    display: block;  /*tüm satırı kaplar*/
+    background-color: #745b37;
+    color: #fff;
+    padding: 10px 15px; /*iç boşluk*/
+    margin-top: 30px;
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    position: relative;  /*altta absolute dediğimiz için buraya relative değerini vermemiz gerek*/
+    overflow: hidden;
+}
+
+.btn-coffee::after {
+    content: 'BUY';
+    position: absolute;
+    top:100%; 
+    left: 0;
+    background-color: #5b2a07;;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;  /*geçiş efekti süresi*/
+}
+
+.btn-coffee:hover::after {
+    top:0;
+}
+
+/*ABOUT*/
+
+.about {
+    margin-bottom: 150px;
+}
+
+.about-title {
+    margin: 60px 0;
+}
+
+.about-title h2 {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color: #5b2a07;
+    font-size: 30px;
+    font-weight: 600;
+
+}
+
+.about-title h2::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #5b2a07;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-img {
+    width: 40%;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*resmn en boy oranını korumasını sağladık */
+}
+
+.about-text {
+    width: 40%;
+
+}
+
+h4 {
+    margin-bottom:25px;
+    text-align: center;
+    font-size: 40px;
+    color: #745b37;
+    font-family: 'Herr Von Muellerhoff', cursive;
+    letter-spacing: 0.5rem;
+    font-weight: 100;
+}
+
+.about-text p {
+    font-size: 15px;
+    text-align: center;
+    color: #2c2727;
+}
+
+/* portfolyo */
+
+.portfolyo {
+    display: flex;  /*yan yana gelmeleri için */
+    flex-wrap: wrap; /*taşan resimleri aşağıya getirir*/
+}
+
+.portfolyo-item {
+    width: 25%;
+    height: 300px;
+    overflow: hidden;  /*taşmaları engelledik*/
+    position: relative;
+}
+
+.portfolyo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*en ve boy oranını koruduk*/
+    transition: .5s;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #5b2a07;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0.8;
+    color: #fff;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.portfolyo-item:hover .overlay {
+    top: 0;
+
+}
+
+.portfolyo-item:hover img {
+    transform: scale(1.1); /*ölçekle oynayabilmek için*/
+}
+
+/* discover */
+
+.discover {
+    margin-bottom: 150px;
+}
+
+.discover-title {
+    margin: 60px 0;
+}
+
+.discover-title h2 {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color: #5b2a07;
+    font-size: 30px;
+    font-weight: 600;
+
+}
+
+.discover-title h2::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #5b2a07;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+
+.discover-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.discover-img {
+    width: 40%;
+}
+
+.discover-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*resmn en boy oranını korumasını sağladık */
+}
+
+.discover-text {
+    width: 40%;
+
+}
+
+h4 {
+    margin-bottom:25px;
+    text-align: center;
+    font-size: 40px;
+    color: #745b37;
+    font-family: 'Herr Von Muellerhoff', cursive;
+    letter-spacing: 0.5rem;
+    font-weight: 100;
+}
+
+.discover-text p {
+    font-size: 15px;
+    text-align: center;
+    color: #2c2727;
+}
+
+/* contact */
+
+.contact {
+    padding: 10px 0;
+}
+
+.contact h2 {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color: #5b2a07;
+    font-size: 30px;
+    font-weight: 600;
+
+}
+
+.contact h2::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #5b2a07;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+
+.contact-content {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    flex-basis: 33%;
+    margin-bottom: 100px;
+    flex-direction: column;
+}
+
+.contact-item i{
+    font-size: 25px;
+    margin-bottom: 30px;
+    color: #5b2a07;
+
+}
+
+.contact-item p {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* footer */
+
+.footer h2 {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color: #5b2a07;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 60px 0;
+}
+
+.footer h2::after{
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #5b2a07;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+
+.footer {
+    background-color: #000;
+
+}
+
+.footer-copyright{
+    color: #fff;
+    text-align: center;
+    flex-basis: 55%;
+    line-height: 2;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-social i {
+    color: #fff;
+    margin-bottom: 50px;
+    font-size: 25px;
+    padding: 0 40px;
+    
+}
+
+.footer-social:first-child {
+    margin-left: 55px;
+}
